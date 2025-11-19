@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmciubr8xmaqx"]
+
+[ext_resource type="Script" uid="uid://dp3ad1osdyfdr" path="res://addons/game_level_tools/scripts/win_create_level.gd" id="1_av30t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av30t"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="CreateLevel" type="Window"]
+disable_3d = true
+oversampling_override = 1.0
+title = "Create Level"
+position = Vector2i(0, 36)
+size = Vector2i(300, 200)
+transient = true
+exclusive = true
+unresizable = true
+maximize_disabled = true
+content_scale_mode = 1
+script = ExtResource("1_av30t")
+
+[node name="Control" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_av30t")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LevelName" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/LevelName"]
+layout_mode = 2
+text = "Level Name:"
+
+[node name="LineEdit" type="LineEdit" parent="Control/MarginContainer/VBoxContainer/LevelName"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelBase" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/LevelBase"]
+layout_mode = 2
+text = "Level Base:"
+
+[node name="LineEdit" type="LineEdit" parent="Control/MarginContainer/VBoxContainer/LevelBase"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelPath" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/LevelPath"]
+layout_mode = 2
+text = "Level Path:"
+
+[node name="LineEdit" type="LineEdit" parent="Control/MarginContainer/VBoxContainer/LevelPath"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="CreateBtn" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Create"
+
+[node name="CancelBtn" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="close_requested" from="." to="." method="close_window"]
+[connection signal="text_changed" from="Control/MarginContainer/VBoxContainer/LevelName/LineEdit" to="." method="_on_level_name_text_changed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/CreateBtn" to="." method="_on_create_btn_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/CancelBtn" to="." method="close_window"]
