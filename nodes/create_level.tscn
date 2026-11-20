@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmciubr8xmaqx"]
+[gd_scene format=3 uid="uid://cmciubr8xmaqx"]
 
-[ext_resource type="Script" uid="uid://dp3ad1osdyfdr" path="res://addons/game_level_tools/scripts/win_create_level.gd" id="1_av30t"]
+[ext_resource type="Script" uid="uid://y665tljioiu5" path="res://addons/Game-Level-Tools/scripts/win_create_level.gd" id="1_av30t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av30t"]
 content_margin_left = 0.0

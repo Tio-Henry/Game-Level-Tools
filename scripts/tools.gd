@@ -4,8 +4,8 @@ extends Control
 var engine_control
 
 var folder_assets: PackedStringArray = [
-	"res://assets/resources/puzzle_object/", 
-	"res://assets/resources/scene_objects/"
+	"res://assets/resources/interact/", 
+	"res://assets/resources/model/"
 	]
 
 @onready var h_categories: HBoxContainer = $MarginContainer/ScrollContainer/HBoxContainer
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func scan_folders() -> void:
 	for folder: String in folder_assets:
-		var v_category: VBoxContainer = load("res://addons/game_level_tools/nodes/v_category.tscn").instantiate()
+		var v_category: VBoxContainer = load("res://addons/Game-Level-Tools/nodes/v_category.tscn").instantiate()
 		v_category.name = folder.get_slice("/",4)
 		v_category.get_node(^"Label").text = str(folder.get_slice("/",4)).capitalize()
 		h_categories.add_child(v_category)
@@ -32,7 +32,7 @@ func scan_folders() -> void:
 
 func add_object(object_path: String) -> void:
 	var scene_editor: Node = EditorInterface.get_edited_scene_root()
-	if scene_editor is Phase:
+	if scene_editor is Loop:
 		var instance: Node = load(object_path).instantiate()
 		scene_editor.add_child(instance, true)
 		instance.owner = scene_editor

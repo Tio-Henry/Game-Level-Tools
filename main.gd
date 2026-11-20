@@ -1,8 +1,8 @@
 @tool
 extends EditorPlugin
 
-var dock: Control = preload("res://addons/game_level_tools/interfaces/tools.tscn").instantiate()
-var level_manage: Control = preload("res://addons/game_level_tools/interfaces/level_manage.tscn").instantiate()
+var dock: Control = preload("res://addons/Game-Level-Tools/interfaces/tools.tscn").instantiate()
+var level_manage: Control = preload("res://addons/Game-Level-Tools/interfaces/level_manage.tscn").instantiate()
 var filesystem: EditorFileSystem = EditorInterface.get_resource_filesystem()
 
 func _enter_tree() -> void:

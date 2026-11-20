@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://5hj2b1kbssdq"]
+[gd_scene format=3 uid="uid://5hj2b1kbssdq"]
 
-[ext_resource type="Script" uid="uid://4fu621qbf5ob" path="res://addons/game_level_tools/scripts/asset_preview.gd" id="1_yvqfu"]
+[ext_resource type="Script" uid="uid://ds6nlvr2emq07" path="res://addons/Game-Level-Tools/scripts/asset_preview.gd" id="1_yvqfu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o10ow"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

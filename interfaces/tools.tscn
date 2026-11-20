@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://1gk5fcd7hcfk"]
+[gd_scene format=3 uid="uid://1gk5fcd7hcfk"]
 
-[ext_resource type="Script" uid="uid://bfy1bgvpx5qst" path="res://addons/game_level_tools/scripts/tools.gd" id="1_c3pyq"]
+[ext_resource type="Script" uid="uid://cgqag3iuhdy5p" path="res://addons/Game-Level-Tools/scripts/tools.gd" id="1_c3pyq"]
 
 [node name="Tools" type="Control"]
 layout_mode = 3
